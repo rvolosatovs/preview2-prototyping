@@ -1,7 +1,5 @@
-default world command {
+default world command-extended {
   import wall-clock: clocks.wall-clock
-
-# test
   import monotonic-clock: clocks.monotonic-clock
   import timezone: clocks.timezone
   import filesystem: filesystem.filesystem
@@ -19,5 +17,13 @@ default world command {
   import preopens: wasi-base.preopens
   import exit: wasi-base.exit
 
-  export main: func() -> result
+  // We should replace all others with `include self.command`
+  // as soon as the unioning of worlds is available:
+  // https://github.com/WebAssembly/component-model/issues/169
+  import console: logging.handler
+  import default-outgoing-HTTP: http.outgoing-handler
+
+  export main: func(
+    args: list<string>,
+  ) -> result
 }

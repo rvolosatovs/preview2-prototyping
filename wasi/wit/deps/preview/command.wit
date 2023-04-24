@@ -1,7 +1,5 @@
 default world command {
   import wall-clock: clocks.wall-clock
-
-# test
   import monotonic-clock: clocks.monotonic-clock
   import timezone: clocks.timezone
   import filesystem: filesystem.filesystem
