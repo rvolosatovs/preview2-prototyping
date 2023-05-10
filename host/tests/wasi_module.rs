@@ -120,55 +120,47 @@ async fn clock_time_get() {
 }
 
 #[test_log::test(tokio::test)]
-#[should_panic]
 async fn close_preopen() {
     run_with_temp_dir("close_preopen").await
 }
 
 #[test_log::test(tokio::test)]
-#[should_panic]
 async fn overwrite_preopen() {
     run_with_temp_dir("overwrite_preopen").await
 }
 
 #[test_log::test(tokio::test)]
-#[should_panic]
 async fn dangling_fd() {
     run_with_temp_dir("dangling_fd").await
 }
 
 #[test_log::test(tokio::test)]
-#[should_panic]
 async fn dangling_symlink() {
     run_with_temp_dir("dangling_symlink").await
 }
 
 #[test_log::test(tokio::test)]
-#[should_panic]
+#[cfg_attr(windows, should_panic)] // TODO: remove
 async fn directory_seek() {
     run_with_temp_dir("directory_seek").await
 }
 
 #[test_log::test(tokio::test)]
-#[should_panic]
 async fn fd_advise() {
     run_with_temp_dir("fd_advise").await
 }
 
 #[test_log::test(tokio::test)]
-#[should_panic]
 async fn fd_filestat_get() {
     run_with_temp_dir("fd_filestat_get").await
 }
 
 #[test_log::test(tokio::test)]
-#[should_panic]
 async fn fd_filestat_set() {
     run_with_temp_dir("fd_filestat_set").await
 }
 
 #[test_log::test(tokio::test)]
-#[should_panic]
 async fn fd_flags_set() {
     run_with_temp_dir("fd_flags_set").await
 }
@@ -180,97 +172,86 @@ async fn fd_readdir() {
 }
 
 #[test_log::test(tokio::test)]
-#[should_panic]
 async fn file_allocate() {
     run_with_temp_dir("file_allocate").await
 }
 
 #[test_log::test(tokio::test)]
-#[should_panic]
 async fn file_pread_pwrite() {
     run_with_temp_dir("file_pread_pwrite").await
 }
 
 #[test_log::test(tokio::test)]
-#[should_panic]
 async fn file_seek_tell() {
     run_with_temp_dir("file_seek_tell").await
 }
 
 #[test_log::test(tokio::test)]
-#[should_panic]
 async fn file_truncation() {
     run_with_temp_dir("file_truncation").await
 }
 
 #[test_log::test(tokio::test)]
-#[should_panic]
 async fn file_unbuffered_write() {
     run_with_temp_dir("file_unbuffered_write").await
 }
 
 #[test_log::test(tokio::test)]
-#[should_panic]
+#[cfg_attr(windows, should_panic)]
 async fn interesting_paths() {
     run_with_temp_dir("interesting_paths").await
 }
 
 #[test_log::test(tokio::test)]
-#[should_panic]
 async fn isatty() {
     run_with_temp_dir("isatty").await
 }
 
 #[test_log::test(tokio::test)]
-#[should_panic]
+#[cfg_attr(windows, should_panic)] // TODO: remove
 async fn nofollow_errors() {
     run_with_temp_dir("nofollow_errors").await
 }
 
 #[test_log::test(tokio::test)]
-#[should_panic]
 async fn path_exists() {
     run_with_temp_dir("path_exists").await
 }
 
 #[test_log::test(tokio::test)]
-#[should_panic]
+#[cfg_attr(not(windows), should_panic)] // TODO: remove
 async fn path_filestat() {
     run_with_temp_dir("path_filestat").await
 }
 
 #[test_log::test(tokio::test)]
-#[should_panic]
+#[cfg_attr(windows, should_panic)] // TODO: remove
 async fn path_link() {
     run_with_temp_dir("path_link").await
 }
 
 #[test_log::test(tokio::test)]
-#[should_panic]
 async fn path_open_create_existing() {
     run_with_temp_dir("path_open_create_existing").await
 }
 
 #[test_log::test(tokio::test)]
-#[should_panic]
 async fn path_open_dirfd_not_dir() {
     run_with_temp_dir("path_open_dirfd_not_dir").await
 }
 
 #[test_log::test(tokio::test)]
-#[should_panic]
 async fn path_open_missing() {
     run_with_temp_dir("path_open_missing").await
 }
 
 #[test_log::test(tokio::test)]
-#[should_panic]
+#[cfg_attr(windows, should_panic)] // TODO: remove
 async fn path_rename() {
     run_with_temp_dir("path_rename").await
 }
 
 #[test_log::test(tokio::test)]
-#[should_panic]
 async fn path_rename_dir_trailing_slashes() {
     run_with_temp_dir("path_rename_dir_trailing_slashes").await
 }
@@ -283,7 +264,6 @@ async fn path_rename_file_trailing_slashes() {
 }
 
 #[test_log::test(tokio::test)]
-#[should_panic]
 async fn path_symlink_trailing_slashes() {
     run_with_temp_dir("path_symlink_trailing_slashes").await
 }
@@ -301,7 +281,6 @@ async fn poll_oneoff_stdio() {
 }
 
 #[test_log::test(tokio::test)]
-#[should_panic]
 async fn readlink() {
     run_with_temp_dir("readlink").await
 }
@@ -315,13 +294,11 @@ async fn remove_directory_trailing_slashes() {
 }
 
 #[test_log::test(tokio::test)]
-#[should_panic]
 async fn remove_nonempty_directory() {
     run_with_temp_dir("remove_nonempty_directory").await
 }
 
 #[test_log::test(tokio::test)]
-#[should_panic]
 async fn renumber() {
     run_with_temp_dir("renumber").await
 }
@@ -332,31 +309,27 @@ async fn sched_yield() {
 }
 
 #[test_log::test(tokio::test)]
-#[should_panic]
 async fn stdio() {
     run_with_temp_dir("stdio").await
 }
 
 #[test_log::test(tokio::test)]
-#[should_panic]
+#[cfg_attr(windows, should_panic)] // TODO: remove
 async fn symlink_create() {
     run_with_temp_dir("symlink_create").await
 }
 
 #[test_log::test(tokio::test)]
-#[should_panic]
 async fn symlink_filestat() {
     run_with_temp_dir("symlink_filestat").await
 }
 
 #[test_log::test(tokio::test)]
-#[should_panic]
 async fn symlink_loop() {
     run_with_temp_dir("symlink_loop").await
 }
 
 #[test_log::test(tokio::test)]
-#[should_panic]
 async fn unlink_file_trailing_slashes() {
     run_with_temp_dir("unlink_file_trailing_slashes").await
 }
